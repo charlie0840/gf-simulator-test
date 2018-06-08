@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>少女前線Q版人形模擬器</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/css.css">
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-6884291-10', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>少女前線Q版人形模擬器</h1>
+    </header>
+    <nav class="controlUi clearfix">
+      <div class="preCanvas Canvas left"></div>
+      <div class="preUI left">
+        <div class="form-group preSelectCharacter">
+          <label>人物：</label>
+          <select class="form-control"></select>
+        </div>
+        <div class="form-group preSelectSkin">
+          <label>扮裝：<small class="text-muted">R開頭為宿舍用</small></label>
+          <select class="form-control"></select>
+        </div>
+        <div class="form-group preSelectAnimation">
+          <label>動作：</label>
+          <select class="form-control"></select>
+        </div>
+        <button type="button" class="btn btn-primary preAddRole">加入</button>
+        <button type="button" class="btn btn-primary preStopRole">停止</button>
+      </div>
+      <div class="gameview left">
+        <div class="form-inline">
+          <div class="gameSelectCharacter form-group">
+            <label>已選人物：</label>
+            <select class="form-control"></select>
+          </div>
+        </div>
+
+        <div class="charOptions">
+          <div class="gameSelectAnimation form-group conRange clearfix">
+            <span style="margin-top:6px;">動作</span>
+            <select class="form-control input-sm"></select>
+          </div>
+          <div class="gameSelectposX form-group conRange clearfix">
+            <span>X</span>
+            <input type="range" min="0" max="800" />
+          </div>
+          <div class="gameSelectposY form-group conRange clearfix">
+            <span>Y</span>
+            <input type="range" min="0" max="800" />
+          </div>
+          <div class="gameSelectscale form-group conRange clearfix">
+            <span>縮放</span>
+            <input type="range" min="200" max="3000" />
+          </div>
+          <div class="text-center">
+            <button type="button" class="btn btn-primary btn-sm gameTurnRole">鏡像</button>
+            <button type="button" class="btn btn-primary btn-sm gameRemoveRole">移除</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="gameShowFPS canvasFps">
+      <input type="checkbox" checked="checked" /> FPS
+    </div>
+    <div class="gameCanvas Canvas"></div>
+
+    <nav class="convasControl form-inline">
+      <div class="gameSelectBackground form-group">
+        <span>背景：</span>
+        <select class="form-control input-sm"></select>
+      </div>
+      <button type="button" class="btn btn-primary btn-sm gameSavePng pull-right" style="margin-left:10px;">存圖</button>
+      <button type="button" class="btn btn-primary btn-sm gameSaveStage pull-right" style="margin-left:10px;">分享</button>
+      <button type="button" class="btn btn-primary btn-sm gameStopRole pull-right">停止</button>
+    </nav>
+
+    <img id="saveImage" width="100%">
+
+    <footer>
+      <p class="text-muted">
+        <small>僅是模擬，和遊戲中動作不一定完全相同</small>
+      </p>
+      <p class="text-muted">所有圖像版權歸各繪師、雲母組、<a href="http://gf.txwy.tw/" target="_blank">天下網遊</a> 所有</p>
+      <p class="text-muted">
+          Original by: <a href="https://github.com/cullus" target="_blank">cullus</a>
+          <a href="https://github.com/cullus/gfSpinePiXi" target="_blank">gfSpinePiXi</a>
+      </p>
+      <p class="text-muted">GitHub: <a href="https://github.com/wsmwason/gf-spine-simulator">wsmwason/gf-spine-simulator</a></p>
+    </footer>
+  </div>
+
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="js/pixi/pixi.js"></script>
+  <script src="js/pixi/pixi-spine.js"></script>
+  <script src="js/girlsData.js"></script>
+  <script src="js/girlsData-plus.js"></script>
+  <script src="js/spine-data.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/game-plus.js"></script>
+</body>
+</html>
